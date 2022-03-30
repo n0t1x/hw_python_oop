@@ -12,11 +12,12 @@ class InfoMessage:
     calories: float
 
     def get_message(self) -> str:
-        return (f'Тип тренировки: {self.training_type}; '
-                f'Длительность: {self.duration:.3f} ч.; '
-                f'Дистанция: {self.distance:.3f} км; '
-                f'Ср. скорость: {self.speed:.3f} км/ч; '
-                f'Потрачено ккал: {self.calories:.3f}.')
+        return (
+            f'Тип тренировки: {self.training_type}; '
+            f'Длительность: {self.duration:.3f} ч.; '
+            f'Дистанция: {self.distance:.3f} км; '
+            f'Ср. скорость: {self.speed:.3f} км/ч; '
+            f'Потрачено ккал: {self.calories:.3f}.')
 
 
 @dataclass
@@ -51,7 +52,7 @@ class Training:
                            self.get_mean_speed(),
                            self.get_spent_calories())
 
-#нужно ли использовать декоратор в дочерних классах?
+
 class Running(Training):
     """Тренировка: бег."""
     COEF_CALORIE_RUN_1 = 18
